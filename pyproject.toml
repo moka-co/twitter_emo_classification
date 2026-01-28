@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="emotion-classification"
+version="1.0"
+description="Deep learning system for classifying emotions in social media text using BiLSTM with attention mechanisms."
+dependencies= [
+    "torch",
+    "datasets",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
+    "nltk",
+    "demoji",
+    "tqdm"
+]
+
