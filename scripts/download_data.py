@@ -58,7 +58,7 @@ def download_glove():
 
 
 def download_semeval_dataset():
-    filepath = "data/datasets"
+    filepath = "data/datasets/raw"
     semeval_filepath_zip = os.path.join(filepath, "SemEval2018-Task1-all-data.zip")
     semeval_url = "https://saifmohammad.com/WebDocs/AIT-2018/AIT2018-DATA/SemEval2018-Task1-all-data.zip"
 
@@ -111,8 +111,11 @@ def download_semeval_dataset():
 
 def download_eltea17():
     eltea_url = "https://raw.githubusercontent.com/RoozbehBandpey/ELTEA17/refs/heads/main/datasets/train.txt"
-    filepath ="data/datasets"
+    filepath ="data/datasets/raw"
     eltea_filepath = os.path.join(filepath, "eltea_train.txt")
+
+    if not os.path.exists(filepath):
+        os.makedirs(filepath)
 
     try:
         response = requests.get(eltea_url, headers=headers, stream=True, timeout=10)
