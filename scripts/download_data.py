@@ -6,6 +6,7 @@ import requests
 import os
 import zipfile
 import shutil
+import kagglehub
 
 # Create a header to mimic a real browser
 headers = {
@@ -130,8 +131,25 @@ def download_eltea17():
     print(f"Successfully downloaded ELTEA17 Dataset under {filepath}")
 
 
+def download_kaggle(): # Download main dataset
+    dataset_url = "aadyasingh55/twitter-emotion-classification-dataset"
+    filepath = "data/datasets/raw/"
+    dataset_filepath = os.path.join(filepath, "data/datasets/raw/train-00000-of-00001.parquet")
+
+    if not os.path.exists(dataset_filepath):
+        path = kagglehub.dataset_download(dataset_url)
+
+        for item in os.listdir(path):
+            s = os.path.join(path, item)
+            d = os.path.join(filepath, item)
+            if os.path.isdir(s):
+                shutil.copytree(s, d, dirs_exist_ok=True)
+            else:
+                shutil.copy2(s, d)
+
 
 # Run functions
 download_glove()
 download_semeval_dataset()
 download_eltea17()
+download_kaggle()

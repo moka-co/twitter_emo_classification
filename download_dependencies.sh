@@ -15,5 +15,8 @@ python3 -m install --upgrade pip
 # Install tqdm
 python3 -m install tqdm
 
+# Install kagglehub
+python3 -m install kagglehub
+
 # Install current directory package
 pip install .
