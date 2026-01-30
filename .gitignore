@@ -2,3 +2,4 @@ venv
 build
 emotion_classification.egg-info
 data
+__pycache__
