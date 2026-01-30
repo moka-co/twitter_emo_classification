@@ -2,6 +2,10 @@
 
 Deep learning system for classifying emotions in social media text using BiLSTM with attention mechanisms. This project achievies **90.87% F1-macro** across 6 emotion categories.
 
+## Quick start
+1. Clone this repo
+2. Run `run_scripts` from the main directory, otherwise it will not work
+
 
 ## Datasets
 Datasets used:
