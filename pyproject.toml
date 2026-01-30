@@ -10,6 +10,7 @@ dependencies= [
     "torch",
     "datasets",
     "pandas",
+    "pyarrow",
     "numpy",
     "matplotlib",
     "seaborn",
