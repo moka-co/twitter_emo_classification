@@ -98,15 +98,17 @@ eltea_df["label"] = eltea_df["emotions"].map(emotions_to_label)
 # Merge ELTEA17 and the merged dataset
 merged_df = pd.concat([merged_df, semeval_subset])
 
+print(merged_df.head())
 
 # Save to path
-save_path = "/data/datasets/process"
+project_root = os.getcwd()
+save_path = os.path.join(project_root, "data", "datasets", "process")
 
-os.makedirs(save_path, exist_ok=True) # Create folder if it doesn't exists
+os.makedirs(save_path, exist_ok=True)
+parquet_path = os.path.join(save_path, "merged_emotions.parquet")
 
-parquet_path = "/data/datasets/process/merged_emotions.parquet"
+merged_df.to_parquet(parquet_path, index=False)
 
-merged_df.to_parquet(parquet_path, index=False, engine='pyarrow')
+print(f"Database successfully saved under {parquet_path}")
 
-print("Database successfully saved under {parquet_path}")
 
