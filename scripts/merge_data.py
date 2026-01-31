@@ -98,8 +98,6 @@ eltea_df["label"] = eltea_df["emotions"].map(emotions_to_label)
 # Merge ELTEA17 and the merged dataset
 merged_df = pd.concat([merged_df, semeval_subset])
 
-print(merged_df.head())
-
 # Save to path
 project_root = os.getcwd()
 save_path = os.path.join(project_root, "data", "datasets", "process")
