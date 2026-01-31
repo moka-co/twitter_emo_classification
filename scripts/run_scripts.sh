@@ -1,8 +1,8 @@
 #!/bin/bash
 
-python scripts/download_data.py
+python -m scripts.download_data
 
-python scripts/merge_data.py
+python -m scripts.merge_data
 
 python -m scripts.remove_outliers
 python -m scripts.make_dictionary

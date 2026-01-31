@@ -100,13 +100,13 @@ merged_df = pd.concat([merged_df, semeval_subset])
 
 
 # Save to path
-save_path = "../data/datasets/process"
+save_path = "/data/datasets/process"
 
 os.makedirs(save_path, exist_ok=True) # Create folder if it doesn't exists
 
-parquet_path = "../data/datasets/process/merged_emotions.parquet"
+parquet_path = "/data/datasets/process/merged_emotions.parquet"
 
 merged_df.to_parquet(parquet_path, index=False, engine='pyarrow')
 
-print("Database successfully saved")
+print("Database successfully saved under {parquet_path}")
 
